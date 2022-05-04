@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <style>
+        body{
+            background-color: azure;
+        }
+        .nav{
+            display: flex;
+            height: 50px;
+            background-color:cadetblue;
+            overflow: auto;
+        }
+        label{
+            width: 80px;
+            height: 100%;
+            margin: 0 20px;
+            line-height: 30px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 10px;
+            font-size: 20px;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: aliceblue;
+            padding: 10px 10px;
+            width: 170px;
+        }
+        label:hover{
+            background-color: rgb(50, 85, 87);
+            cursor: pointer;
+        }
+        .gallery{
+            margin: auto;
+            max-width: 1500px;
+            height: 2500px;
+            background-color: antiquewhite;
+        }
+        .image{
+            height: 350px;
+            width: 350px;
+            margin: 11px;
+            background-color:white;
+            float: left;
+            border-style: hidden;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+        .image img{
+            margin: 0;
+            width: 100%;
+            height: 200px;
+        }
+        .image:hover{
+            box-shadow: 0 25px 40px rgba(0,0,0,0.3);
+            cursor: pointer;
+        }
+        .image desc{
+            color: aliceblue;
+        }
+        footer{
+            position: fixed;
+            background-color: cadetblue;
+            bottom: 0;
+            height: 50px;
+            width: 100%;
+            text-align: center;
+            font-size: 20px;
+            color: aliceblue;
+            margin: 0 20px;
+            line-height: 50px;
+        }
+        button{
+            margin: auto;
+            border: none;
+            background: none;
+        }
+        .fa-thumbs-up{
+            font-size: 25px;
+            color: green;
+            cursor: pointer;
+        }
+        .fa-thumbs-down{
+            font-size: 25px;
+            color: red;
+            cursor: pointer;
+        }
+        .name{
+            color:cornflowerblue;
+            font-size: 17px;
+            font-weight: bold;
+            font-family:  BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Roboto, Arial, sans-serif;;
+        }
+        .description{
+            color: #666;
+        }
+        input{
+            display: none;
+        }
+        #check1:checked .image{
+            opacity: 1;
+            transform: scale(1);
+            position: relative;
+        }
+        #check1:checked~ .gallery .hill,
+        #check1:checked~ .gallery .places {
+            opacity: 0;
+            transform: scale(0);
+            position: absolute;
+        }
+        #check2:checked~ .gallery .heritage{
+            opacity: 1;
+            transform: scale(1);
+            position: relative;
+        }
+        #check2:checked~.gallery .hill,
+        #check2:checked~.gallery .nature,
+        #check2:checked~.gallery .all{
+            opacity: 0;
+            transform: scale(0);
+            position: absolute;
+        }
+        #check3:checked~ .gallery .nature,
+        #check3:checked~ .gallery .hill{
+            opacity: 1;
+            transform: scale(1);
+            position: relative;
+        }
+        #check3:checked~ .gallery .heritage,
+        #check3:checked~ .gallery .places,
+        #check3:checked~.gallery .all{
+            opacity: 0;
+            transform: scale(0);
+            position: absolute;
+        }
+.cover{
+    position: relative;
+    margin: auto;
+    width: 100%;
+    height: 900px;
+  background-color:whitesmoke;
+  margin-top: 50px;
+  border-radius: 20px;
+  display: flex;
+}
+.cover img{
+    position: absolute;
+    width: 40%;
+    height: 70%;
+    margin-left: 800px;
+    margin-top: 50px;
+}
+    .cover-name{
+    width: 30%;
+    margin-top: 200px;
+    margin-left: 200px;
+    font-style: italic;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 10px;
+}
+div .btn{
+    border: 0px solid;
+    border-radius: 40px;
+    height: 40px;
+    width: 160px;
+    text-align: center;
+    background-color:darkseagreen;
+    margin-left: 80px;
+}
+a{
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    font-style: normal;
+    font-size: 25px;
+}
+    </style>
+</head>
+<body>
+    <input type="radio" name="pics" id="check1" value="check1" checked>
+    <input type="radio" name="pics" id="check2" value="check2">
+    <input type="radio" name="pics" id="check3" value="check3">
+        <div class="nav">
+        <label for="check1">All Photos</label>
+        <label for="check2">Heritage Sites</label>
+        <label for="check3">Nature</label>
+        </div>
+        
+        <div class="gallery">
+            <div class="cover all">
+                <div class="cover-name">
+                    <h1 style="margin-left: 60px;">Photo Gallery</h1>
+                    <div class="btn"><a href="#view-images">View Images</a></div>
+                    
+                </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9ORF4BozuSe-MGaFuAX8MTZwj9KaTXkJ7qA&usqp=CAU">
+            </div>
+            <div class="cover places">
+                <div class="cover-name">
+                    <h1>Heritage Sites Gallery</h1>
+                    <div class="btn"><a href="#view-images">View Images</a></div>
+                </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB6Qg8FIgfBzS6QbelgequzXs1L3lniMh3Yg&usqp=CAU">
+            </div>
+            <div class="cover hill">
+                <div class="cover-name">
+                    <h1>Hill Stations Gallery</h1>
+                    <div class="btn"><a href="#view-images">View Images</a></div>
+                </div>
+                <img src="data:image/jpeg;base64,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">
+            </div>
+            <div id="view-images">
+                <div class="image heritage">
+                    <img src="https://cdn.dnaindia.com/sites/default/files/styles/full/public/2017/04/18/566640-redfort.jpg">
+                    <div class="name">Red Fort</div>
+                    <div class="description">The fort was plundered of its artwork and jewels during Nadir Shah's invasion of the Mughal Empire in 1739.</div>
+                    <div class="button">
+                        <button><i class=" fa fa-solid fa-thumbs-up"></i></button>
+                    
+                    <button><i class=" fa fa-solid fa-thumbs-down"></i></button>
+                </div>
+                </div>
+                <div class="image heritage">
+                    <img src="https://www.tourmyindia.com/heritage/images/heritage.jpg">
+                    
+                        <div class="name">Taj Mahal</div>
+                        <div class="description">The Taj Mahal was commissioned by Shah Jahan in 1631, to be built in the memory of his wife Mumtaz Mahal.</div>
+                        <div class="button">
+                        <button><i class=" fa fa-solid fa-thumbs-up"></i></button>
+                    
+                    <button><i class=" fa fa-solid fa-thumbs-down"></i></button>
+                </div>
+            </div>
+               
+                <div class="image heritage">
+                    <img src="https://www.roadaffair.com/wp-content/uploads/2017/09/colosseum-rome-italy-shutterstock_433413835.jpg" alt="nature">
+                    <div class="name">The Colosseum</div>
+                        <div class="description">It is an oval amphitheatre in the centre of the city of Rome, Italy, just east of the Roman Forum. It is the largest ancient amphitheatre ever built, and is still the largest standing amphitheatre in the world today, despite its age. </div>
+                    <div class="button">
+                        <button><i class=" fa fa-solid fa-thumbs-up"></i></button>
+                    <button><i class=" fa fa-solid fa-thumbs-down"></i></button>
+                </div>
+                </div>
+                 
+                <div class="image heritage">
+                    <img src="https://awcungeneva.files.wordpress.com/2015/05/palmyra_1.jpg" alt="nature">
+                    
+                <div class="name">Palmyra</div>
+                <div class="description">The ruins of the ancient city of Palmyra were designated a UNESCO World Heritage site in 1980.</div>
+                <div class="button">
+                    <button><i class=" fa fa-solid fa-thumbs-up"></i></button>
+                <button><i class=" fa fa-solid fa-thumbs-down"></i></button>
+            </div>    
+            </div>
+                <div class="image heritage">
+                    <img src="https://cdn.britannica.com/79/191979-050-EDBAEAC7/chandelier-ceiling-Frederick-I-Germany-Aachen-Palatine.jpg?w=690&h=388&c=crop" alt="nature">
+                    
+                <div class="name">chandelier</div>
+                <div class="description">
+                    Romanesque circular chandelier hanging from the ceiling of the Palatine Chapel in Aachen, Germany. The chandelier was a gift from the Holy Roman emperor Frederick I in the 12th century.</div>
+                    <div class="button">
+                        <button><i class=" fa fa-solid fa-thumbs-up"></i></button>
+                    <button><i class=" fa fa-solid fa-thumbs-down"></i></button>
+                </div>
+                </div>
+                 <div class="image heritage">
+                    <img src="https://cdn.britannica.com/46/153446-050-D01B8009/Kiosk-Roman-island-Trajan-Agilkia-Nile-River.jpg?w=690&h=388&c=crop" alt="nature">
+                    
+                <div class="name">Roman Kiosk, Nile River</div>
+                    <div class="description">
+                        The Roman Kiosk of Trajan (left) on Agilkia island in the Nile River, near Aswān, Egypt.</div>
+                        <div class="button">
+                            <button><i class=" fa fa-solid fa-thumbs-up"></i></button>
+                        <button><i class=" fa fa-solid fa-thumbs-down"></i></button>
+                    </div> 
+                    </div>
+                <div class="image heritage">
+                    <img src="https://cdn.britannica.com/22/189722-050-E07BA0F9/temples-temple-archaeological-site-Ramses-II-Abu.jpg" alt="nature">
+                    <div class="name">Aswān, Egypt: Abu Simbel</div>
+                    <div class="description">
+                        Abu Simbel archaeological site, containing two temples built by the Egyptian king Ramses II (reigned 1279–13 BCE), now located in Aswān muḥāfaẓah (governorate), southern Egypt.</div>
+                    <div class="button">
+                        <button><i class=" fa fa-solid fa-thumbs-up"></i></button>
+                    <button><i class=" fa fa-solid fa-thumbs-down"></i></button>
+                </div>
+                </div>
+                <div class="image heritage">
+                    <img src="https://cdn.britannica.com/94/100594-050-85B1CF62/El-Capitan-Bridalveil-Fall-California-Yosemite-National.jpg" alt="nature">
+                    <div class="name">Yosemite National Park</div>
+                    <div class="description">El Capitan (left) and Bridalveil Fall in Yosemite National Park, California.</div>
+                    <div class="button">
+                        <button><i class=" fa fa-solid fa-thumbs-up"></i></button>
+                    <button><i class=" fa fa-solid fa-thumbs-down"></i></button>
+                </div>
+                </div>
+                
+                <div class="image nature">
+                    <img src="https://img.theculturetrip.com/768x/smart/wp-content/uploads/2017/12/mussoorie.jpg" alt="nature">
+                    <div class="name">Mussoorie,Uttarakhand</div>
+                    <div class="description">Just a half an hour drive away from Dehradun lies the gorgeous hill station of Mussoorie.</div>
+                    <div class="button">
+                        <button><i class=" fa fa-solid fa-thumbs-up"></i></button>
+                    <button><i class=" fa fa-solid fa-thumbs-down"></i></button>
+                </div>
+                </div>
+                <div class="image nature">
+                    <img src="https://img.theculturetrip.com/768x/smart/wp-content/uploads/2017/12/mahabaleshwar.jpg" alt="nature">
+                    <div class="name">Mahabaleshwar,Maharashtra</div>
+                    <div class="description">An erstwhile summer capital of Bombay during the British rule in India, Mahabaleshwar is one of the most popular hill stations in west India, set amidst the Sahyadri mountain ranges.</div>
+                    <div class="button">
+                        <button><i class=" fa fa-solid fa-thumbs-up"></i></button>
+                    <button><i class=" fa fa-solid fa-thumbs-down"></i></button>
+                </div>
+                </div>
+                <div class="image nature">
+                    <img src="https://img.theculturetrip.com/768x/smart/wp-content/uploads/2017/12/shillong.jpg" alt="hill staion">
+                    <div class="name">Shillong, Meghalaya</div>
+                    <div class="description">Known as the ‘Scotland of the East’, Shillong is located in northeast India and boasts natural beauty in every nook.</div>
+                    <div class="button">
+                        <button><i class=" fa fa-solid fa-thumbs-up"></i></button>
+                    <button><i class=" fa fa-solid fa-thumbs-down"></i></button>
+                </div>
+                </div>
+                <div class="image nature">
+                    <img src="https://img.theculturetrip.com/768x/smart/wp-content/uploads/2017/12/darjeeling.jpg" alt="nature">
+                    <div class="name">Darjeeling</div>
+                    <div class="description">A retreat for those who love to be amid nature, Darjeeling is nestled at an altitude of 2,042 metres in the lesser Himalayas region. </div>
+                    <div class="button">
+                        <button><i class=" fa fa-solid fa-thumbs-up"></i></button>
+                    <button><i class=" fa fa-solid fa-thumbs-down"></i></button>
+                </div>
+                </div>
+                <div class="image nature">
+                    <img src="https://img.theculturetrip.com/768x/smart/wp-content/uploads/2017/09/manali-1.jpg" alt="nature">
+                    <div class="name">Manali,Hiamnchal Pradesh</div>
+                    <div class="description">Surrounded by the Himalayas and lush greenery, and nestled on the banks of the Beas River, its location makes it a prime destination for backpackers and adventurers. </div>
+                    <div class="button">
+                        <button><i class=" fa fa-solid fa-thumbs-up"></i></button>
+                    <button><i class=" fa fa-solid fa-thumbs-down"></i></button>
+                </div>
+                </div>
+                <div class="image nature">
+                    <img src="https://img.theculturetrip.com/768x/smart/wp-content/uploads/2017/12/nainital.jpg" alt="nature">
+                    <div class="name">Nainital,Uttarakhand</div>
+                    <div class="description">In the outer Himalayas amid the Kumaon hills sit the scenic town of Nainital, which is a paradise for nature and outdoor lovers.</div>
+                    <div class="button">
+                        <button><i class=" fa fa-solid fa-thumbs-up"></i></button>
+                    <button><i class=" fa fa-solid fa-thumbs-down"></i></button>
+                </div>
+                </div>
+            </div>
+            </div>
+            <footer>Email us at contact@photoGallery.in</footer>
+</body>
+</html>
